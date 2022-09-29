@@ -62,18 +62,22 @@ Example :
 
 Suppose there are 1 small, 1 medium, 1 large type of spot in the garage. Let's name the space as 1S(small), 1M, 1L
 
-1.Small car "A" comes in : 
+1.Small car "A" comes in :
   `admitTheCar` will return success. 
   Car A is parked into 1S
-2. Small car "B" comes in : 
+
+2. Small car "B" comes in :
   `admitTheCar` will return success. 
   Car B is parked into 1M
+
 3. Small car "C" comes in : 
   `admitTheCar` will return success. 
   Car C is parked into 1L
+
 4.Small car "A" leaves 
   ExitTheCar() will return success 
   1S is now available
+
 5.Large car "D" comes in 
   `admitTheCar` will return success. 
   1M and 1D is occupied by small car but 1S is free 
