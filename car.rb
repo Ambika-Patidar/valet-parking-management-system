@@ -1,4 +1,7 @@
 class Car
+  FAILURE = 'Failure: no parking spot available to park the car.'
+  SUCCESS = 'Succees'
+
   attr_accessor :spot_in_garbage
 
   def initialize
@@ -25,7 +28,7 @@ class Car
         if is_medium_available
           @spot_in_garbage[:medium] = { "#{carSize}": plat_number }
         elsif @spot_in_garbage[:medium].keys.include?(:small) && is_small_available
-          @spot_in_garbage[:small] = @spot_in_garbage[:medium].values.first
+          @spot_in_garbage[:small] = { "#{@spot_in_garbage[:medium].keys.first}": @spot_in_garbage[:medium].values.first }
           @spot_in_garbage[:medium] = { "#{carSize}": plat_number }
         elsif is_large_available
           @spot_in_garbage[:large] = { "#{carSize}": plat_number }
@@ -39,9 +42,9 @@ class Car
         elsif @spot_in_garbage[:large].keys.include?(:small) && (is_small_available || is_medium_available)
           puts is_small_available, is_medium_available
           if is_small_available
-            @spot_in_garbage[:small] = @spot_in_garbage[:large].values.first if is_small_available
-          else 
-            @spot_in_garbage[:medium] = @spot_in_garbage[:large].values.first
+            @spot_in_garbage[:small] = { "#{@spot_in_garbage[:large].keys.first}": @spot_in_garbage[:large].values.first } if is_small_available
+          else
+            @spot_in_garbage[:medium] = { "#{@spot_in_garbage[:large].keys.first}": @spot_in_garbage[:large].values.first }
           end
         elsif @spot_in_garbage[:large].keys.include?(:medium) && is_medium_available
           @spot_in_garbage[:medium] = { "#{carSize}": @spot_in_garbage[:large].values.first }  
