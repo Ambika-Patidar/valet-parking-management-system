@@ -2,7 +2,7 @@
 
 
 
-Functional requirement of the system:-
+**Functional requirement of the system:-**
 
 The parking garage has three types of parking spots for three kinds of vehicle sizes. Vehicle size: small, medium, and large.
 A small vehicle can park in a small, medium, and large spot.
@@ -13,8 +13,6 @@ Numbers of each type of parking spot are fixed and should be provided by the Val
 
 
 Valet parking system provides below two methods for the valet:-
-
-
 
 admitTheCar (String licensePlatNumber, string carsize) {
 
@@ -29,7 +27,6 @@ admitTheCar (String licensePlatNumber, string carsize) {
 }
 
 
-
 ExitTheCar(String licensePlatNumber){
 
 //return the success if the car is parked inside the car and free up space.
@@ -40,9 +37,7 @@ ExitTheCar(String licensePlatNumber){
 
 
 
-Expectation:-
-
-
+**Expectation:-**
 
 1. Design a class and expose methods to "admit" and "exit" the car.
 
@@ -58,11 +53,11 @@ Expectation:-
 
 
 
-Example : 
+**Example : **
 
 Suppose there are 1 small, 1 medium, 1 large type of spot in the garage. Let's name the space as 1S(small), 1M, 1L
 
-1.Small car "A" comes in :
+1. Small car "A" comes in :
   `admitTheCar` will return success. 
   Car A is parked into 1S
 
@@ -74,11 +69,11 @@ Suppose there are 1 small, 1 medium, 1 large type of spot in the garage. Let's n
   `admitTheCar` will return success. 
   Car C is parked into 1L
 
-4.Small car "A" leaves 
+4. Small car "A" leaves 
   ExitTheCar() will return success 
   1S is now available
 
-5.Large car "D" comes in 
+5. Large car "D" comes in 
   `admitTheCar` will return success. 
   1M and 1D is occupied by small car but 1S is free 
   So the system has to manage to shuffle the car so that small car "C" goes into parking spot 1S 
