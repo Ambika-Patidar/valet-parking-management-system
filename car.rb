@@ -61,11 +61,11 @@ class Car
     return 'Failure: the car is not parked inside the garage'
   end
 
-
+  private
 
   def is_car_parked(garage, plat_number)
     if garage.respond_to?(:key?) && garage.values.include?(plat_number)
-      @spot_in_garbage[garage.index(plat_number).to_sym] = {}
+      @spot_in_garbage[garage.key(plat_number).to_sym] = {}
       return true
     elsif garage.respond_to?(:each)
       inside_garbage = nil
